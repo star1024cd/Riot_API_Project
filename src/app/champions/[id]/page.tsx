@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const ChampionDetailPage = async ({ params }: Props) => {
   const championId = await fetchChampionDetailList(params.id);
-  const championDetail: ChampionsType = championId[params.id];
+  const championDetail = championId[params.id];
   if (!championDetail) {
     return <div>그런 챔피언은 없습니다.</div>;
   }
