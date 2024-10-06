@@ -1,4 +1,4 @@
-import { ChampionDataType, ChampionsType } from "@/types/Champion";
+import { ChampionDataType } from "@/types/Champion";
 import { fetchChampionDetailList, fetchLatestVersion } from "@/utils/serverApi";
 import { Metadata } from "next";
 import Image from "next/image";
