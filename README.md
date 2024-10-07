@@ -7,7 +7,7 @@
 
 ## ⚡ 배포 링크
 
-### [Riot API PROJECT](https://riot-api-project-ten.vercel.app/)
+### [Riot API PROJECT](https://riot-api-project-star.vercel.app/)
 
 ## 📦 폴더 구조
 
