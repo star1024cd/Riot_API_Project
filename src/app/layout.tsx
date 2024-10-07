@@ -29,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="bg-gray-800 text-white py-8 fixed top-0 w-full z-10">
+        <header className="bg-zinc-800 text-white py-8 fixed top-0 w-full z-50">
           <nav className="container mx-auto flex justify-around">
             <Link href="/">Home</Link>
             <Link href="/champions">챔피언 목록</Link>
@@ -37,14 +37,14 @@ export default function RootLayout({
             <Link href="/rotation">챔피언 로테이션</Link>
           </nav>
         </header>
-        <div className="pt-[64px]">{children}</div>
-        <footer className="bg-gray-800 p-4 mt-8 fixed bottom-0 w-full">
+        <div className="pt-[64px] overflow-y-auto">{children}</div>
+        <footer className="bg-zinc-800 p-4 mt-8 fixed bottom-0 w-full z-50">
           <div className="container mx-auto text-center text-white text-sm">
-            [Your Product Name] is not endorsed by Riot Games and does not
-            reflect the views or opinions of Riot Games or anyone officially
-            involved in producing or managing Riot Games properties. Riot Games
-            and all associated properties are trademarks or registered
-            trademarks of Riot Games, Inc.
+            [This Product] is not endorsed by Riot Games and does not reflect
+            the views or opinions of Riot Games or anyone officially involved in
+            producing or managing Riot Games properties. Riot Games and all
+            associated properties are trademarks or registered trademarks of
+            Riot Games, Inc.
           </div>
         </footer>
       </body>

@@ -17,8 +17,6 @@ export default function RotationPage() {
       try {
         const res = await fetch("/api/rotation");
         const rotationData = await res.json();
-        // const rotationData = await fetchChampionRotation();
-
         if (!rotationData) {
           return <div>로테이션 데이터를 찾을 수 없습니다.</div>;
         }
@@ -26,10 +24,7 @@ export default function RotationPage() {
         const latestVersion = await fetchLatestVersion();
 
         const filterChampionsByRotation = Object.values(championData).filter(
-          (champ) =>
-            rotationData.freeChampionIdsForNewPlayers.includes(
-              Number(champ.key)
-            )
+          (champ) => rotationData.freeChampionIds.includes(Number(champ.key))
         );
         setRotationFilter(filterChampionsByRotation);
         setLatestVerstion(latestVersion);
@@ -51,7 +46,7 @@ export default function RotationPage() {
         {rotationFilter.map((champion) => (
           <div key={champion.id}>
             <Link href={`/champions/${champion.id}`}>
-              <div className="border rounded p-4 hover:shadow-lg">
+              <div className="border rounded p-4 list-hover">
                 <Image
                   className="rounded-sm object-scale-down"
                   width={80}

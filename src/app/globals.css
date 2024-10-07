@@ -26,14 +26,26 @@ body {
   }
 }
 
+h2 {
+  @apply text-2xl font-bold mb-2;
+}
+
 .top-container {
-  @apply container mx-auto mt-20;
+  @apply container mx-auto mt-20 mb-28;
 }
 
 .list-h1 {
-  @apply text-red-800 text-4xl mb-5 font-semibold;
+  @apply text-gray-900 text-4xl mb-5 font-semibold;
 }
 
 .grid-setting {
   @apply grid grid-cols-6 gap-4;
+}
+
+.detail-container {
+  @apply bg-white text-gray-900;
+}
+
+.list-hover {
+  @apply hover:shadow-md transition duration-200 ease-in-out;
 }

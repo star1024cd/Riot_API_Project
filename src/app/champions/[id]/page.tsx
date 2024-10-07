@@ -32,8 +32,8 @@ const ChampionDetailPage = async ({ params }: Props) => {
     return <div>그런 챔피언은 없습니다.</div>;
   }
   return (
-    <div className="bg-black text-red-800 gap-x-5 grid grid-cols-[1fr_1fr] items-center justify-items-center min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <div className="">
+    <div className="relative detail-container gap-x-5 grid grid-cols-[1fr_1fr] items-center justify-items-center min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <div className="relative z-30">
         <Image
           className="rounded-sm object-scale-down"
           width={308}
@@ -43,10 +43,10 @@ const ChampionDetailPage = async ({ params }: Props) => {
           alt={championDetail.title}
         />
       </div>
-      <div className="w-3/4">
+      <div className="w-3/4 relative z-30">
         <div className="w-full">
           <h1 className="text-8xl mb-2 font-bold">{championDetail.name}</h1>
-          <p className="text-xl mb-32 text-right text-red-900">
+          <p className="text-xl mb-32 text-right text-gray-700">
             {championDetail.title}
           </p>
         </div>
@@ -66,7 +66,38 @@ const ChampionDetailPage = async ({ params }: Props) => {
             난이도 : <span>{championDetail.info.difficulty}</span>
           </p>
         </div>
+        <div className="mt-10">
+          <h2 className="mb-2">스킬</h2>
+          <div className=" flex flex-row items-center gap-4">
+            {championDetail.spells.map(
+              (
+                spell: { image: { full: string }; name: string },
+                index: number
+              ) => (
+                <div key={index}>
+                  <Image
+                    className="rounded-sm object-scale-down"
+                    width={64}
+                    height={64}
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    src={`https://ddragon.leagueoflegends.com/cdn/14.19.1/img/spell/${spell.image.full}`}
+                    alt={spell.name}
+                  />
+                </div>
+              )
+            )}
+          </div>
+        </div>
       </div>
+      {/* <Image
+        className="z-0 opacity-90"
+        src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championDetail.id}_0.jpg`}
+        alt="배경 이미지"
+        layout="fill"
+        objectFit="cover"
+        objectPosition="center"
+      /> */}
+      {/* <div className="absolute inset-0 z-10 bg-gradient-to-r from-gray-700 via-gray-900 to-black opacity-50"></div> */}
     </div>
   );
 };

@@ -14,7 +14,7 @@ export default async function ChampionsPage() {
         {Object.values(championList).map((champion) => (
           <div key={champion.id}>
             <Link href={`/champions/${champion.id}`}>
-              <div className=" border rounded p-4 hover:shadow-lg">
+              <div className=" border rounded p-4 list-hover">
                 <Image
                   className="rounded-sm object-scale-down"
                   width={80}
@@ -22,7 +22,7 @@ export default async function ChampionsPage() {
                   src={`https://ddragon.leagueoflegends.com/cdn/${latestVersion}/img/champion/${champion.image.full}`}
                   alt={champion.title}
                 />
-                <h2 className="mt-2 text-xl font-semibold">{champion.name}</h2>
+                <h2>{champion.name}</h2>
                 <p className="text-gray-500">{champion.title}</p>
               </div>
             </Link>

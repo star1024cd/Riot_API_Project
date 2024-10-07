@@ -14,7 +14,7 @@ export default async function ItemsPage() {
         {Object.entries(itemsList).map(([id, item]) => (
           <div key={id}>
             <Link href={`/items/${id}`}>
-              <div className=" border rounded p-4 hover:shadow-lg h-60 overflow-hidden">
+              <div className="border rounded p-4 list-hover h-60 overflow-hidden">
                 <Image
                   className="rounded-sm object-scale-down"
                   width={80}
