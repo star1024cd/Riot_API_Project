@@ -31,7 +31,7 @@ const ItemDetailPage = async ({ params }: Props) => {
     return <div>그런 아이템은 없습니다.</div>;
   }
   return (
-    <div className="detail-container gap-x-5 grid grid-cols-1 items-center text-center justify-items-center min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="text-gray-900 gap-x-5 grid grid-cols-1 items-center text-center justify-items-center min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <div>
         <Image
           className="rounded-sm object-scale-down mx-auto"

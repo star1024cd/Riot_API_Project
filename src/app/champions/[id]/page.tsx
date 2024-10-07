@@ -32,7 +32,7 @@ const ChampionDetailPage = async ({ params }: Props) => {
     return <div>그런 챔피언은 없습니다.</div>;
   }
   return (
-    <div className="relative detail-container gap-x-5 grid grid-cols-[1fr_1fr] items-center justify-items-center min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="relative detail-container grid grid-cols-[1fr_1fr] items-center justify-items-center min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <div className="relative z-30">
         <Image
           className="rounded-sm object-scale-down"
@@ -46,7 +46,7 @@ const ChampionDetailPage = async ({ params }: Props) => {
       <div className="w-3/4 relative z-30">
         <div className="w-full">
           <h1 className="text-8xl mb-2 font-bold">{championDetail.name}</h1>
-          <p className="text-xl mb-32 text-right text-gray-700">
+          <p className="text-xl mb-32 text-right text-gray-300">
             {championDetail.title}
           </p>
         </div>
@@ -76,7 +76,7 @@ const ChampionDetailPage = async ({ params }: Props) => {
               ) => (
                 <div key={index}>
                   <Image
-                    className="rounded-sm object-scale-down"
+                    className="rounded-md object-scale-down"
                     width={64}
                     height={64}
                     sizes="(max-width: 768px) 100vw, 33vw"
@@ -89,15 +89,13 @@ const ChampionDetailPage = async ({ params }: Props) => {
           </div>
         </div>
       </div>
-      {/* <Image
-        className="z-0 opacity-90"
+      <Image
+        className="z-0 opacity-90 object-cover object-center"
         src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championDetail.id}_0.jpg`}
         alt="배경 이미지"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
-      /> */}
-      {/* <div className="absolute inset-0 z-10 bg-gradient-to-r from-gray-700 via-gray-900 to-black opacity-50"></div> */}
+        fill={true}
+      />
+      <div className="absolute inset-0 z-10 bg-gradient-to-bl from-zinc-800 via-black to-black opacity-90"></div>
     </div>
   );
 };
