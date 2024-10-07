@@ -28,6 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const ChampionDetailPage = async ({ params }: Props) => {
   const championId = await fetchChampionDetailList(params.id);
   const championDetail = championId[params.id];
+  const latestVersion = await fetchLatestVersion();
   if (!championDetail) {
     return <div>그런 챔피언은 없습니다.</div>;
   }
@@ -80,7 +81,7 @@ const ChampionDetailPage = async ({ params }: Props) => {
                     width={64}
                     height={64}
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    src={`https://ddragon.leagueoflegends.com/cdn/14.19.1/img/spell/${spell.image.full}`}
+                    src={`https://ddragon.leagueoflegends.com/cdn/${latestVersion}/img/spell/${spell.image.full}`}
                     alt={spell.name}
                   />
                 </div>
